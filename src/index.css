@@ -2,41 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* KalaiNee Design System - Indian Heritage & Arts Platform
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base colors inspired by Indian heritage */
+    --background: 42 100% 98%;
+    --foreground: 25 30% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 25 30% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 25 30% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Saffron-inspired primary colors */
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 25 90% 65%;
+    --primary-deep: 22 85% 45%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Indigo-inspired secondary colors */
+    --secondary: 225 50% 25%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 225 45% 35%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Golden accent colors */
+    --accent: 45 90% 60%;
+    --accent-foreground: 25 30% 15%;
+    --accent-warm: 40 85% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Muted earth tones */
+    --muted: 35 20% 92%;
+    --muted-foreground: 25 15% 45%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 35 25% 85%;
+    --input: 35 25% 90%;
+    --ring: 25 95% 53%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Cultural gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-deep)));
+    --gradient-warm: linear-gradient(135deg, hsl(var(--accent-warm)), hsl(var(--primary-light)));
+    --gradient-heritage: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--primary-deep)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+
+    /* Artistic shadows */
+    --shadow-warm: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+    --shadow-cultural: 0 20px 40px -15px hsl(var(--secondary) / 0.2);
+    --shadow-elegant: 0 8px 25px -8px hsl(var(--accent) / 0.15);
+
+    /* Smooth transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +80,38 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode with warm Indian night tones */
+    --background: 25 15% 8%;
+    --foreground: 42 50% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 25 20% 12%;
+    --card-foreground: 42 50% 92%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 25 20% 12%;
+    --popover-foreground: 42 50% 92%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 25 85% 60%;
+    --primary-foreground: 25 15% 8%;
+    --primary-light: 25 75% 70%;
+    --primary-deep: 22 80% 50%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 225 35% 85%;
+    --secondary-foreground: 25 15% 8%;
+    --secondary-light: 225 30% 75%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 45 80% 70%;
+    --accent-foreground: 25 15% 8%;
+    --accent-warm: 40 75% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --muted: 25 10% 15%;
+    --muted-foreground: 25 20% 65%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 25 15% 20%;
+    --input: 25 15% 18%;
+    --ring: 25 85% 60%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +129,52 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    background: linear-gradient(135deg, hsl(var(--background)), hsl(var(--muted) / 0.3));
+    min-height: 100vh;
+  }
+
+  /* Cultural typography */
+  .font-display {
+    font-family: 'Inter', 'Devanagari Sangam MN', 'Noto Sans Devanagari', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .font-cultural {
+    font-family: 'Inter', 'Devanagari Sangam MN', 'Noto Sans Devanagari', sans-serif;
+    font-weight: 500;
+  }
+
+  /* Cultural animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes glow {
+    from { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
+    to { box-shadow: 0 0 30px hsl(var(--primary) / 0.6); }
+  }
+
+  /* Cultural patterns */
+  .pattern-mandala {
+    background-image: radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  .pattern-paisley {
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(var(--accent) / 0.08) 2px, transparent 2px),
+      radial-gradient(circle at 75% 75%, hsl(var(--secondary) / 0.08) 2px, transparent 2px);
+    background-size: 40px 40px, 60px 60px;
   }
 }
