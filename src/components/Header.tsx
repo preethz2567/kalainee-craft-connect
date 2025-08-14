@@ -19,17 +19,17 @@ const Header = () => {
         </div>
         
         <nav className="hidden md:flex items-center space-x-6">
-          <a href="#discover" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-            Discover
+          <a href="/feed" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+            Feed
           </a>
-          <a href="#workshops" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-            Workshops
+          <a href="/explore/artist" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+            Artists
           </a>
-          <a href="#community" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <a href="/explore/admirer" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+            Explore
+          </a>
+          <a href="/community" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
             Community
-          </a>
-          <a href="#events" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-            Events
           </a>
         </nav>
 

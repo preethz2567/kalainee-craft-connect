@@ -73,9 +73,11 @@ const PortalSection = () => {
                 </ul>
               </div>
 
-              <Button variant="artist" className="w-full" size="lg">
-                Join as Artist
-                <Palette className="h-4 w-4" />
+              <Button variant="artist" className="w-full" size="lg" asChild>
+                <a href="/explore/artist">
+                  Join as Artist
+                  <Palette className="h-4 w-4" />
+                </a>
               </Button>
             </CardContent>
           </Card>
@@ -124,9 +126,11 @@ const PortalSection = () => {
                 </ul>
               </div>
 
-              <Button variant="admirer" className="w-full" size="lg">
-                Join as Admirer
-                <Heart className="h-4 w-4" />
+              <Button variant="admirer" className="w-full" size="lg" asChild>
+                <a href="/explore/admirer">
+                  Join as Admirer
+                  <Heart className="h-4 w-4" />
+                </a>
               </Button>
             </CardContent>
           </Card>

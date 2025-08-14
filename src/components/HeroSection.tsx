@@ -24,13 +24,17 @@ const HeroSection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="xl" className="group">
-                Explore as Artist
-                <Palette className="h-5 w-5 group-hover:rotate-12 transition-transform" />
+              <Button variant="hero" size="xl" className="group" asChild>
+                <a href="/explore/artist">
+                  Explore as Artist
+                  <Palette className="h-5 w-5 group-hover:rotate-12 transition-transform" />
+                </a>
               </Button>
-              <Button variant="cultural" size="xl" className="group">
-                Join as Admirer
-                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <Button variant="cultural" size="xl" className="group" asChild>
+                <a href="/explore/admirer">
+                  Join as Admirer
+                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </a>
               </Button>
             </div>
 
